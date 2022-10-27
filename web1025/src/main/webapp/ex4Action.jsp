@@ -14,7 +14,7 @@
 	String[] hobby = request.getParameterValues("hobby");
 	System.out.println(hobby);
 	
-	if(hobby != null){
+	if(hobby != null){ // != 같지 않다면
 	for(String h : hobby){
 		System.out.println(h);
 		}

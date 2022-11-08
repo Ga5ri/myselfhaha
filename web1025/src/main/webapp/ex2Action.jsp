@@ -36,9 +36,9 @@
 			%>
 					<input type="radio" name="gender" value="M">남
 					<input type="radio" name="gender" value="F" checked=checked>여
-				<%
+			<%
 				}
-				%>
+			%>
 		</div>
 		<div>
 			<select disabled="disabled"> <!-- disabled 속성으로 변경불가하게 설정 가느 -->

@@ -6,12 +6,12 @@
 <%
 	// 1. 드라이버 로딩
 	Class.forName("org.mariadb.jdbc.Driver");
-	// System.out.println("로딩 성공");
+	System.out.println("로딩 성공");
 	
 	// 2. 접속 연결
 	Connection conn = DriverManager.getConnection(
 			"jdbc:mariadb://localhost:3306/onepiece","root","java1234");
-	// System.out.println(conn + " <-- conn");
+	System.out.println(conn + " <-- conn");
 	
 	// conn(데이터베이스접속), 접속한 데이터베이스에 쿼리를 만들때 사용하는 메서드:prepareStatement
 	PreparedStatement stmt = conn.prepareStatement( 
@@ -50,6 +50,8 @@
 					<th>P.FRUIT</th>
 					<th>P.HOME</th>
 					<th>P.GENDER</th>
+					<th>수정</th>
+					<th>삭제</th>
 				</tr>
 			</thead>
 			<tbody class="bg-light text-success">
@@ -86,6 +88,16 @@
 							<%		
 								}
 							%>
+							</td>
+							<td>
+								<a href="<%=request.getContextPath()%>/updatePirateForm.jsp?pno=<%=rs.getInt("pno")%>">
+									수정
+								</a>
+							</td>
+							<td>
+								<a href="<%=request.getContextPath()%>/deletePirate.jsp?pno=<%=rs.getInt("pno")%>">
+									삭제
+								</a>
 							</td>
 						</tr>
 				<%		
